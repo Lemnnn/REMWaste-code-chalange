@@ -12,7 +12,7 @@ export default function SkipSelectionPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen text-white flex items-center justify-center">
-        <Loader2 className="animate-spin h-10 w-10 text-white" />
+        <Loader2 className="animate-spin h-11 w-10 text-white" />
       </div>
     );
   }
