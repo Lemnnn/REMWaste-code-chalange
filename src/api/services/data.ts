@@ -1,5 +1,4 @@
-const BASE_API_URL =
-  "https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft";
+const BASE_API_URL = import.meta.env.VITE_URL;
 
 export async function getData() {
   const headers = new Headers();
