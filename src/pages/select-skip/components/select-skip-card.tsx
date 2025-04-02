@@ -33,7 +33,7 @@ export default function SelectSkipCard({ skip }: SkipCardProps) {
     >
       <div className="relative">
         <div className="absolute top-0 right-0 z-10">
-          <span className="inline-block m-3 py-1.5 px-3 text-sm font-medium bg-blue-600 text-white rounded-md">
+          <span className="inline-block m-3 py-1.5 px-3 text-sm font-medium bg-black/70 text-white rounded-md">
             {skip.size} Yards
           </span>
         </div>
@@ -80,14 +80,23 @@ export default function SelectSkipCard({ skip }: SkipCardProps) {
                 <p className="mb-1">
                   <strong>Hire Period:</strong> {skip.hire_period_days} days
                 </p>
-                {skip.transport_cost && (
+                {skip.transport_cost ? (
                   <p className="mb-1">
-                    <strong>Transport Cost:</strong> £{skip.transport_cost}
+                    <strong>Transport Cost:</strong> £
+                    {skip.transport_cost || "0"}
+                  </p>
+                ) : (
+                  <p className="mb-1">
+                    <strong>Transport Cost:</strong> n/a
                   </p>
                 )}
-                {skip.per_tonne_cost && (
+                {skip.per_tonne_cost ? (
                   <p>
                     <strong>Per Tonne Cost:</strong> £{skip.per_tonne_cost}
+                  </p>
+                ) : (
+                  <p>
+                    <strong>Per Tonne Cost:</strong> n/a
                   </p>
                 )}
                 <div className="absolute w-3 h-3 bg-gray-800 transform rotate-45 -top-1.5 right-3"></div>
